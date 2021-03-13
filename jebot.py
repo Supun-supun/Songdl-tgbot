@@ -81,7 +81,7 @@ async def song(client, message):
     #if args.startswith("/help"):
         #return ""    
     status = await message.reply(
-             text="<b>Downloading your song, Plz wait 🥺\n\nMade by @Infinity_BOTs 🇱🇰</b>",
+             text="<b>සිංදුව Download වෙන ගමන්,චුට්ටක් ඉන්නකො🥺\n\nMade by @EZTee_channel</b>",
              disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
                             [[
@@ -94,14 +94,14 @@ async def song(client, message):
       )
     video_link = yt_search(args)
     if not video_link:
-        await status.edit("<b>Song not found 😑</b>")
+        await status.edit("<b>සිංදුව හම්බුන් නෑ🥺💔</b>")
         return ""
     yt = YouTube(video_link)
     audio = yt.streams.filter(only_audio=True).first()
     try:
         download = audio.download(filename=f"{str(user_id)}")
     except Exception as ex:
-        await status.edit("<b>Failed to download song 🤕</b>")
+        await status.edit("<b>සිංදු Download කරන්න නොහැකි වූවා</b>")
         LOGGER.error(ex)
         return ""
     os.rename(download, f"{str(user_id)}.mp3")
@@ -125,10 +125,10 @@ async def song(client, message):
     user_id = message.from_user["id"]
     args = get_arg(message) + " " + "song"
     if args.startswith(" "):
-        await message.reply("<b>Enter a song name❗\n\nExample: `/s guleba`</b>")
+        await message.reply("<b>සිංදුවෙ නම ඇතුලත් කරන්න❗\n\nExample: `/s පණට නමක්`</b>")
         return ""
     status = await message.reply(
-             text="<b>Downloading your song, Plz wait 🥺\n\nMade by @Infinity_BOTs 🇱🇰</b>",
+             text="<b>සිංදුව Download වෙනගමන් චුට්ටක් ඉන්න🥺\n\nMade by @EZTee_channel</b>",
              disable_web_page_preview=True,
                         reply_markup=InlineKeyboardMarkup(
                             [[
@@ -141,14 +141,14 @@ async def song(client, message):
       )
     video_link = yt_search(args)
     if not video_link:
-        await status.edit("<b>Song not found 😑</b>")
+        await status.edit("<b>සිදුව හම්බුන් නෑ🥺💔</b>")
         return ""
     yt = YouTube(video_link)
     audio = yt.streams.filter(only_audio=True).first()
     try:
         download = audio.download(filename=f"{str(user_id)}")
     except Exception as ex:
-        await status.edit("<b>Failed to download song 🤕</b>")
+        await status.edit("<b>සිංදුව Download කරන්න බැරි උනා🤕</b>")
         LOGGER.error(ex)
         return ""
     os.rename(download, f"{str(user_id)}.mp3")
@@ -169,9 +169,9 @@ async def start(client, message):
    if message.chat.type == 'private':
        await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>Hey There, I'm a Song Downloader Bot
+               text="""<b>ඔයාලට අවශ්‍ය සිංදු ලබාගැනීමට 🇱🇰
 
-Made by @ImJanindu 🇱🇰
+@EZTee_channel  ☘
 
 Hit help button to find out more about how to use me</b>""",   
                             reply_markup=InlineKeyboardMarkup(
@@ -208,15 +208,15 @@ async def help(client, message):
     if message.chat.type == 'private':   
         await Jebot.send_message(
                chat_id=message.chat.id,
-               text="""<b>Send a song name to download song
+               text="""<b>සිංදුවෙ නම එවන්න
 
-~ @Infinity_BOTs</b>""",
+~ @EZTee_channel</b>""",
             reply_to_message_id=message.message_id
         )
     else:
         await Jebot.send_message(
                chat_id=message.chat.id,
-               text="<b>Song Downloader Help\n\nEnter a song name❗\n\nExample: `/s guleba`</b>",
+               text="<b>Song Downloader Help\n\nසිංදුවෙ නම ඇතුලත් කරන්න❗\n\nExample: `/s පණට නමක්`</b>",
             reply_to_message_id=message.message_id
         )     
         
