@@ -6,11 +6,11 @@
         "Music",
         "Songdl",
         "Telegram Bot",
-        "JE Bots"
+        "EZ Bots"
     ],
     "website": "https://infinityje.com",
-    "repository": "https://github.com/ImJanindu/Songdl-tgbot",
-    "success_url": "https://t.me/Infinity_BOTs",
+    "repository": "https://github.com/Supun-supun/Songdl-tgbot",
+    "success_url": "https://t.me/EZTee_channel",
     "env": {
         "TG_BOT_TOKEN": {
             "description": "You Telegram Bot Token from @BotFather",
